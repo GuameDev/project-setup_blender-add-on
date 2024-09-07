@@ -4,7 +4,7 @@ setup(
     name="blender_project_setup",
     version="1.0.0",
     description="Blender add-on to automate project folder setup",
-    author="Your Name",
+    author="Pablo Muñoz",
     packages=find_packages(),
     install_requires=[],
 )

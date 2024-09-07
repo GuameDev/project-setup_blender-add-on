@@ -1,73 +1,61 @@
+import sys
 import unittest
-import tempfile
+from unittest.mock import patch
 import os
-from unittest.mock import patch, MagicMock
 
-# Mock bpy before importing anything else
-bpy_mock = MagicMock()
-modules = {'bpy': bpy_mock}
-patcher = patch.dict('sys.modules', modules)
-patcher.start()
+# Mock bpy globally to avoid ModuleNotFoundError
+sys.modules['bpy'] = unittest.mock.MagicMock()
 
-# Import the module AFTER mocking bpy
-from blender_project_setup.project_setup import create_project_directory, create_subfolders, get_default_base_path
+# Import only the domain logic (utils)
+from blender_project_setup.utils.project_setup import create_project_directory, create_subfolders, get_default_base_path
 
 class TestProjectSetup(unittest.TestCase):
 
-    def setUp(self):
-        # Create a temporary directory before each test
-        self.temp_dir = tempfile.TemporaryDirectory()
-
-    def tearDown(self):
-        # Cleanup temporary directory after each test
-        self.temp_dir.cleanup()
-
-    # Test for creating a project directory
-    def test_create_project_directory(self):
+    @patch('os.makedirs')
+    @patch('os.path.exists', return_value=False)
+    def test_create_project_directory(self, mock_exists, mock_makedirs):
         project_name = "TestProject"
-        project_path = create_project_directory(self.temp_dir.name, project_name)
+        base_path = "/path/to/base"
+        expected_path = os.path.join(base_path, project_name)
+        result = create_project_directory(base_path, project_name)
+        
+        self.assertEqual(result, expected_path)
+        mock_makedirs.assert_called_once()
 
-        # Check if the project path exists
-        self.assertIsNotNone(project_path)
-        self.assertTrue(os.path.exists(project_path))
-
-    # Test for trying to create a directory that already exists
-    def test_create_project_directory_already_exists(self):
+    @patch('os.path.exists', return_value=True)
+    def test_create_project_directory_already_exists(self, mock_exists):
         project_name = "TestProject"
-        os.makedirs(os.path.join(self.temp_dir.name, project_name))
+        base_path = "/path/to/base"
+        result = create_project_directory(base_path, project_name)
+        
+        self.assertIsNone(result)  # None is returned if project already exists
 
-        # Try to create it again, expect None
-        project_path = create_project_directory(self.temp_dir.name, project_name)
-        self.assertIsNone(project_path)
-
-    # Test creating subfolders
-    def test_create_subfolders(self):
-        project_name = "TestProject"
-        project_path = create_project_directory(self.temp_dir.name, project_name)
+    @patch('os.makedirs')
+    def test_create_subfolders(self, mock_makedirs):
+        project_path = "/path/to/project"
         folder_structure = ["folder1", "folder2"]
 
-        # Create subfolders
         create_subfolders(project_path, folder_structure)
 
-        # Verify that the subfolders exist
-        for folder in folder_structure:
-            self.assertTrue(os.path.exists(os.path.join(project_path, folder)))
+        # Ensure os.makedirs was called twice (for each folder)
+        self.assertEqual(mock_makedirs.call_count, 2)
+        mock_makedirs.assert_any_call(os.path.join(project_path, "folder1"), exist_ok=True)
+        mock_makedirs.assert_any_call(os.path.join(project_path, "folder2"), exist_ok=True)
 
-    # Test OS-specific paths with mocked OS detection
-    @patch('platform.system')
-    def test_get_default_base_path_windows(self, mock_platform):
-        mock_platform.return_value = "Windows"
-        self.assertEqual(get_default_base_path(), "C:/Projects")
+    @patch('platform.system', return_value="Windows")
+    def test_get_default_base_path_windows(self, mock_system):
+        base_path = get_default_base_path()
+        self.assertEqual(base_path, "C:/Projects")
 
-    @patch('platform.system')
-    def test_get_default_base_path_mac(self, mock_platform):
-        mock_platform.return_value = "Darwin"  # macOS
-        self.assertEqual(get_default_base_path(), os.path.expanduser("~/Documents/Projects"))
+    @patch('platform.system', return_value="Darwin")
+    def test_get_default_base_path_mac(self, mock_system):
+        base_path = get_default_base_path()
+        self.assertEqual(base_path, os.path.expanduser("~/Documents/Projects"))
 
-    @patch('platform.system')
-    def test_get_default_base_path_linux(self, mock_platform):
-        mock_platform.return_value = "Linux"
-        self.assertEqual(get_default_base_path(), os.path.expanduser("~/Projects"))
+    @patch('platform.system', return_value="Linux")
+    def test_get_default_base_path_linux(self, mock_system):
+        base_path = get_default_base_path()
+        self.assertEqual(base_path, os.path.expanduser("~/Projects"))
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
