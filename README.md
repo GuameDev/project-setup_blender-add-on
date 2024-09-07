@@ -96,6 +96,6 @@ This addon is licensed under the GNU General Public License v3.0. See the [LICEN
 
 ---
 
-**Author**: Your Name  
+**Author**: Pablo Muñoz
 **Version**: 1.0.0  
 **Blender Version**: 3.0 and above  
