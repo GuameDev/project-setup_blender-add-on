@@ -1,0 +1,27 @@
+{
+  "template_name": "Basic 3D Project",
+  "description": "A simple folder structure for basic 3D projects.",
+  "folders": [
+      {
+          "name": "01_References"
+      },
+      {
+          "name": "02_Models"
+      },
+      {
+          "name": "03_Textures"
+      },
+      {
+          "name": "04_Rigs"
+      },
+      {
+          "name": "05_Animations"
+      },
+      {
+          "name": "06_Render"
+      },
+      {
+          "name": "07_Backups"
+      }
+  ]
+}

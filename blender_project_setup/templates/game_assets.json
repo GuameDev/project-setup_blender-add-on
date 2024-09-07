@@ -1,0 +1,40 @@
+{
+    "template_name": "Game Asset Project",
+    "description": "Folder structure for creating assets for games.",
+    "folders": [
+        {
+            "name": "01_Concept",
+            "subfolders": [
+                {"name": "References"},
+                {"name": "Sketches"}
+            ]
+        },
+        {
+            "name": "02_Models",
+            "subfolders": [
+                {"name": "Low_Poly"},
+                {"name": "High_Poly"},
+                {"name": "Retopology"}
+            ]
+        },
+        {
+            "name": "03_Textures",
+            "subfolders": [
+                {"name": "UV_Maps"},
+                {"name": "Baked_Textures"},
+                {"name": "PBR_Materials"}
+            ]
+        },
+        {
+            "name": "04_Exports",
+            "subfolders": [
+                {"name": "FBX"},
+                {"name": "OBJ"},
+                {"name": "GLTF"}
+            ]
+        },
+        {
+            "name": "05_Final_Renders"
+        }
+    ]
+}

@@ -82,10 +82,13 @@ The project includes unit tests for the domain logic. To run the tests:
 
 1. Ensure you have Python installed.
 2. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
+
 3. Run the tests:
+
    ```bash
    python -m unittest discover -s tests
    ```
