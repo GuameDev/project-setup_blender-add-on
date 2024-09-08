@@ -17,6 +17,7 @@ Blender Project Setup is an addon designed to streamline the process of creating
   - Animations (Walk Cycles, Facial Expressions)
   - Render (Preview, Final)
   - Backups (Old Versions, Auto Saves)
+- Predefined folder templates you can select from, including Basic, Animation, Sculpting, and Game Development templates.
 - Cross-platform support for Windows, macOS, and Linux with default base paths depending on the OS.
 
 ## Installation
@@ -33,8 +34,9 @@ Blender Project Setup is an addon designed to streamline the process of creating
 1. Open Blender.
 2. In the 3D View panel, find the new **Project Folders** tab.
 3. Define your project name and base path or use the default base path.
-4. Click the `Create Project` button.
-5. The addon will automatically create a structured folder setup for you based on the provided project name and base path.
+4. Select a folder template from the dropdown (e.g., Basic, Animation, Sculpting, Game Development).
+5. Click the `Create Project` button.
+6. The addon will automatically create a structured folder setup for you based on the provided project name and base path.
 
 ### Folder Structure Example
 
@@ -100,5 +102,5 @@ This addon is licensed under the GNU General Public License v3.0. See the [LICEN
 ---
 
 **Author**: Pablo Muñoz
-**Version**: 1.0.0  
+**Version**: 1.1.0  
 **Blender Version**: 3.0 and above  
