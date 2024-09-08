@@ -1,7 +1,7 @@
+import os
 import bpy
 from ..utils.template_manager import TemplateManager
 from ..utils.project_manager import ProjectManager
-import os
 
 class CreateProjectFolderOperator(bpy.types.Operator):
     bl_idname = "object.create_project_folder"
@@ -12,11 +12,6 @@ class CreateProjectFolderOperator(bpy.types.Operator):
         project_name = context.scene.my_project_name
         base_path = context.scene.my_base_path
         template_name = context.scene.my_template
-        
-        # Ensure base path is valid
-        if not os.path.isdir(base_path):
-            self.report({'ERROR'}, "Invalid base path. Please select a valid directory.")
-            return {'CANCELLED'}
         
         # Ensure a valid template is selected
         if not template_name or template_name == 'NONE':

@@ -15,13 +15,12 @@ bl_info = {
 def get_template_items(self, context):
     manager = TemplateManager()
     return manager.list_templates()
-
+    
 def register():
     bpy.utils.register_class(CreateProjectFolderOperator)
     bpy.utils.register_class(SelectBasePathOperator)
     bpy.utils.register_class(FolderCreatorPanel)
 
-    # Register custom properties for user input
     bpy.types.Scene.my_project_name = bpy.props.StringProperty(
         name="Project Name",
         default="MyNew3DProject"
@@ -33,7 +32,6 @@ def register():
         default=system_utils.get_default_base_path()
     )
 
-    # Register the template selection property with valid function for items
     bpy.types.Scene.my_template = bpy.props.EnumProperty(
         name="Template",
         description="Choose a template for the folder structure",
@@ -42,17 +40,13 @@ def register():
     )
 
 def unregister():
-    # Only unregister if it has been registered to prevent errors
-    if hasattr(bpy.types.Scene, 'my_project_name'):
-        del bpy.types.Scene.my_project_name
-    if hasattr(bpy.types.Scene, 'my_base_path'):
-        del bpy.types.Scene.my_base_path
-    if hasattr(bpy.types.Scene, 'my_template'):
-        del bpy.types.Scene.my_template
-
     bpy.utils.unregister_class(CreateProjectFolderOperator)
     bpy.utils.unregister_class(SelectBasePathOperator)
     bpy.utils.unregister_class(FolderCreatorPanel)
+
+    del bpy.types.Scene.my_project_name
+    del bpy.types.Scene.my_base_path
+    del bpy.types.Scene.my_template
 
 if __name__ == "__main__":
     register()

@@ -1,6 +1,4 @@
 import bpy
-from ..utils.system_utils import SystemUtils
-
 
 class FolderCreatorPanel(bpy.types.Panel):
     bl_label = "Project Folders"
