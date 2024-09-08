@@ -6,7 +6,7 @@ from .utils.system_utils import SystemUtils
 from .utils.template_manager import TemplateManager
 
 bl_info = {
-    "name": "Blender Project Setup",
+    "name": "Project Setup",
     "blender": (2, 80, 0),  # Minimum version of Blender
     "category": "Object",
     "version": (1, 0),
