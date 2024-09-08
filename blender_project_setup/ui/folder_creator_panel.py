@@ -1,19 +1,29 @@
 import bpy
 
 class FolderCreatorPanel(bpy.types.Panel):
-    bl_label = "Project Folder Creator"
-    bl_idname = "OBJECT_PT_folder_creator"
+    bl_label = "Project Folders"
+    bl_idname = "OBJECT_PT_project_folders"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
-    bl_category = 'Project Folders'
+    bl_category = 'Project Setup'
 
     def draw(self, context):
         layout = self.layout
-        layout.prop(context.scene, 'my_project_name')
-        layout.prop(context.scene, 'my_base_path')
+        scene = context.scene
+
+        # Project Name input
+        layout.prop(scene, "my_project_name")
+
+        # Base Path - read-only, only accessible via the file browser operator
+        row = layout.row()
+        row.prop(scene, "my_base_path", text="Base Path")
+        row.enabled = False  # Disables manual input
+        
+        # Button to select base path using file browser
         layout.operator("object.select_base_path", text="Select Base Path")
         
-        # Add template selection dropdown
-        layout.prop(context.scene, 'my_template')
+        # Template selection
+        layout.prop(scene, "my_template", text="Template")
         
+        # Button to create project folder
         layout.operator("object.create_project_folder", text="Create Project")
