@@ -1,0 +1,42 @@
+{
+    "template_name": "Environmental Design Project",
+    "description": "Folder structure for large environment/world building projects.",
+    "folders": [
+        {
+            "name": "01_References",
+            "subfolders": [
+                {"name": "Moodboards"},
+                {"name": "Concept_Art"}
+            ]
+        },
+        {
+            "name": "02_Scenes",
+            "subfolders": [
+                {"name": "Blocking"},
+                {"name": "Final_Models"}
+            ]
+        },
+        {
+            "name": "03_Textures",
+            "subfolders": [
+                {"name": "Ground_Materials"},
+                {"name": "Tree_Bark"},
+                {"name": "Water"}
+            ]
+        },
+        {
+            "name": "04_Lighting",
+            "subfolders": [
+                {"name": "HDRIs"},
+                {"name": "Sun_Sky"}
+            ]
+        },
+        {
+            "name": "05_Renders",
+            "subfolders": [
+                {"name": "Preview"},
+                {"name": "Final"}
+            ]
+        }
+    ]
+}

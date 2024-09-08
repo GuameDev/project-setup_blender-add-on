@@ -1,0 +1,52 @@
+{
+    "template_name": "Character Animation",
+    "description": "A detailed folder structure for character creation and animation projects.",
+    "folders": [
+        {
+            "name": "01_Concept_Art",
+            "subfolders": [
+                {"name": "References"},
+                {"name": "Sketches"}
+            ]
+        },
+        {
+            "name": "02_Models",
+            "subfolders": [
+                {"name": "Base_Mesh"},
+                {"name": "High_Poly"},
+                {"name": "Retopology"},
+                {"name": "Final_Mesh"}
+            ]
+        },
+        {
+            "name": "03_Textures",
+            "subfolders": [
+                {"name": "UV_Maps"},
+                {"name": "Baked_Textures"},
+                {"name": "Hand_Painted"}
+            ]
+        },
+        {
+            "name": "04_Rigs",
+            "subfolders": [
+                {"name": "Skeleton"},
+                {"name": "Controllers"},
+                {"name": "Weight_Painting"}
+            ]
+        },
+        {
+            "name": "05_Animations",
+            "subfolders": [
+                {"name": "Walk_Cycles"},
+                {"name": "Facial_Animations"}
+            ]
+        },
+        {
+            "name": "06_Render",
+            "subfolders": [
+                {"name": "Preview_Renders"},
+                {"name": "Final_Renders"}
+            ]
+        }
+    ]
+}
