@@ -22,7 +22,7 @@ Blender Project Setup is an addon designed to streamline the process of creating
 
 ## Installation
 
-1. Download the `.zip` file of the addon from this repository.
+1. Download the `.zip` file of the addon from the [releases page](https://github.com/GuameDev/Blender.Addon.ProjectSetup/releases/tag/v1.1.0).
 2. Open Blender and navigate to `Edit` -> `Preferences`.
 3. Go to the `Add-ons` tab and click on `Install...`.
 4. Select the downloaded `.zip` file and click `Install Add-on from File`.
@@ -72,6 +72,55 @@ MyNew3DProject/
 └── 07_Backups
     ├── Old_Versions
     └── Auto_Saves
+```
+
+## Available Templates
+
+### Basic 3D Project
+
+```bash
+Folders:
+01_References
+02_Models
+03_Textures
+04_Rigs
+05_Animations
+06_Render
+07_Backups
+```
+
+### Character Animation
+
+```bash
+Folders:
+01_Concept_Art/References, Sketches
+02_Models/Base_Mesh, High_Poly, Retopology, Final_Mesh
+03_Textures/UV_Maps, Baked_Textures, Hand_Painted
+04_Rigs/Skeleton, Controllers, Weight_Painting
+05_Animations/Walk_Cycles, Facial_Animations
+06_Render/Preview_Renders, Final_Renders
+```
+
+### Environmental Design Project
+
+```bash
+Folders:
+01_References/Moodboards, Concept_Art
+02_Scenes/Blocking, Final_Models
+03_Textures/Ground_Materials, Tree_Bark, Water
+04_Lighting/HDRIs, Sun_Sky
+05_Renders/Preview, Final
+```
+
+### Game Asset Project
+
+```bash
+Folders:
+01_Concept/References, Sketches
+02_Models/Low_Poly, High_Poly, Retopology
+03_Textures/UV_Maps, Baked_Textures, PBR_Materials
+04_Exports/FBX, OBJ, GLTF
+05_Final_Renders
 ```
 
 ## Development & Contribution
