@@ -10,7 +10,7 @@ bl_info = {
     "blender": (2, 80, 0),  # Minimum version of Blender
     "category": "Object",
     "version": (1, 0),
-    "author": "Your Name",
+    "author": "Pablo Muñoz",
     "description": "Create a folder structure for new 3D projects in Blender",
 }
 
