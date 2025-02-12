@@ -30,7 +30,7 @@
       "create_blend": true
     },
     {
-      "name": "FinalRender",
+      "name": "Final_Render",
       "order": 7,
       "create_blend": true
     }
