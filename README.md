@@ -151,5 +151,5 @@ This addon is licensed under the GNU General Public License v3.0. See the [LICEN
 ---
 
 **Author**: Pablo Muñoz
-**Version**: 1.1.0  
+**Version**: 1.2.0  
 **Blender Version**: 3.0 and above  
