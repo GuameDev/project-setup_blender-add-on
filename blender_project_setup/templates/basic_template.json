@@ -1,31 +1,38 @@
 {
-    "template_name": "Basic 3D Project",
-    "description": "A simple folder structure for basic 3D projects.",
-    "folders": [
-        {
-            "name": "Blockout",
-            "order": 1,
-            "create_blend": true,
-            "initial_blend": true
-        },
-        {
-            "name": "Models",
-            "order": 2
-        },
-        {
-            "name": "Textures",
-            "order": 3
-        },
-        {
-            "name": "UV",
-            "order": 4,
-            "create_blend": true
-        },
-        {
-            "name": "FinalRender",
-            "order": 5,
-            "create_blend": true
-        }
-    ]
-  }
-  
+  "template_name": "Basic 3D Project",
+  "description": "A simple folder structure for basic 3D projects.",
+  "folders": [
+    {
+      "name": "Blockout",
+      "order": 1,
+      "create_blend": true,
+      "initial_blend": true
+    },
+    {
+      "name": "High_Poly",
+      "order": 2
+    },
+    {
+      "name": "Retopology",
+      "order": 3
+    },
+    {
+      "name": "UV",
+      "order": 4
+    },
+    {
+      "name": "Textures",
+      "order": 5
+    },
+    {
+      "name": "Exports",
+      "order": 6,
+      "create_blend": true
+    },
+    {
+      "name": "FinalRender",
+      "order": 7,
+      "create_blend": true
+    }
+  ]
+}
