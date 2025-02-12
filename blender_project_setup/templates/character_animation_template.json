@@ -1,52 +1,63 @@
 {
-    "template_name": "Character Animation",
-    "description": "A detailed folder structure for character creation and animation projects.",
-    "folders": [
+  "template_name": "Character Animation",
+  "description": "A detailed folder structure for character creation and animation projects.",
+  "folders": [
+    {
+      "name": "Concept_Art",
+      "order": 1,
+      "subfolders": [
+        { "name": "References", "order": 1 },
+        { "name": "Sketches", "order": 2 }
+      ]
+    },
+    {
+      "name": "Models",
+      "order": 2,
+      "subfolders": [
         {
-            "name": "01_Concept_Art",
-            "subfolders": [
-                {"name": "References"},
-                {"name": "Sketches"}
-            ]
+          "name": "Base_Mesh",
+          "order": 1,
+          "create_blend": true,
+          "initial_blend": true
         },
-        {
-            "name": "02_Models",
-            "subfolders": [
-                {"name": "Base_Mesh"},
-                {"name": "High_Poly"},
-                {"name": "Retopology"},
-                {"name": "Final_Mesh"}
-            ]
-        },
-        {
-            "name": "03_Textures",
-            "subfolders": [
-                {"name": "UV_Maps"},
-                {"name": "Baked_Textures"},
-                {"name": "Hand_Painted"}
-            ]
-        },
-        {
-            "name": "04_Rigs",
-            "subfolders": [
-                {"name": "Skeleton"},
-                {"name": "Controllers"},
-                {"name": "Weight_Painting"}
-            ]
-        },
-        {
-            "name": "05_Animations",
-            "subfolders": [
-                {"name": "Walk_Cycles"},
-                {"name": "Facial_Animations"}
-            ]
-        },
-        {
-            "name": "06_Render",
-            "subfolders": [
-                {"name": "Preview_Renders"},
-                {"name": "Final_Renders"}
-            ]
-        }
-    ]
+        { "name": "High_Poly", "order": 2, "create_blend": true },
+        { "name": "Retopology", "order": 3, "create_blend": true },
+        { "name": "Final_Mesh", "order": 4, "create_blend": true }
+      ]
+    },
+    {
+      "name": "Textures",
+      "order": 3,
+      "subfolders": [
+        { "name": "UV_Maps", "order": 1 },
+        { "name": "Baked_Textures", "order": 2 },
+        { "name": "Hand_Painted", "order": 3 }
+      ]
+    },
+    {
+      "name": "Rigs",
+      "order": 4,
+      "subfolders": [
+        { "name": "Skeleton", "order": 1 },
+        { "name": "Controllers", "order": 2 },
+        { "name": "Weight_Painting", "order": 3 }
+      ]
+    },
+    {
+      "name": "Animations",
+      "order": 5,
+      "subfolders": [
+        { "name": "Walk_Cycles", "order": 1 },
+        { "name": "Facial_Animations", "order": 2 }
+      ]
+    },
+    {
+      "name": "Render",
+      "order": 6,
+      "subfolders": [
+        { "name": "Preview_Renders", "order": 1, "create_blend": true },
+        { "name": "Final_Renders", "order": 2, "create_blend": true }
+      ]
+    }
+  ]
 }
