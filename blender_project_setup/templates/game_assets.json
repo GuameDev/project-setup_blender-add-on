@@ -3,38 +3,47 @@
     "description": "Folder structure for creating assets for games.",
     "folders": [
         {
-            "name": "01_Concept",
+            "name": "Concept_Art",
+            "order": 1,
             "subfolders": [
-                {"name": "References"},
-                {"name": "Sketches"}
+                {"name": "References", "order": 1},
+                {"name": "Sketches", "order": 2}
             ]
         },
         {
-            "name": "02_Models",
+            "name": "Models",
+            "order": 2,
             "subfolders": [
-                {"name": "Low_Poly"},
-                {"name": "High_Poly"},
-                {"name": "Retopology"}
+                {"name": "Blockout", "order": 1, "create_blend": true, "initial_blend": true},
+                {"name": "High_Poly", "order": 2, "create_blend": true},
+                {"name": "Retopology", "order": 3, "create_blend": true},
+                {"name": "UV", "order": 4, "create_blend": true},
+                {"name": "Exports_To_Texture", "order": 5, "create_blend": true}
+
             ]
         },
         {
-            "name": "03_Textures",
+            "name": "Textures",
+            "order": 3,
             "subfolders": [
-                {"name": "UV_Maps"},
-                {"name": "Baked_Textures"},
-                {"name": "PBR_Materials"}
+                {"name": "Texture_projects", "order": 1},
+                {"name": "Baked_Textures", "order": 2},
+                {"name": "PBR_Materials", "order": 3}
             ]
         },
         {
-            "name": "04_Exports",
+            "name": "Exports",
+            "order": 4,
             "subfolders": [
-                {"name": "FBX"},
-                {"name": "OBJ"},
-                {"name": "GLTF"}
+                {"name": "FBX", "order": 1},
+                {"name": "OBJ", "order": 2},
+                {"name": "GLTF", "order": 3}
             ]
         },
         {
-            "name": "05_Final_Renders"
+            "name": "Final_Renders",
+            "order": 5,
+            "create_blend": true
         }
     ]
 }

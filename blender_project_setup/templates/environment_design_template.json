@@ -3,39 +3,44 @@
     "description": "Folder structure for large environment/world building projects.",
     "folders": [
         {
-            "name": "01_References",
+            "name": "References",
+            "order": 1,
             "subfolders": [
-                {"name": "Moodboards"},
-                {"name": "Concept_Art"}
+                {"name": "Moodboards", "order": 1},
+                {"name": "Concept_Art", "order": 2}
             ]
         },
         {
-            "name": "02_Scenes",
+            "name": "Scenes",
+            "order": 2,
             "subfolders": [
-                {"name": "Blocking"},
-                {"name": "Final_Models"}
+                {"name": "Blocking", "order": 1, "create_blend": true, "initial_blend": true},
+                {"name": "Final_Models", "order": 2, "create_blend": true}
             ]
         },
         {
-            "name": "03_Textures",
+            "name": "Textures",
+            "order": 3,
             "subfolders": [
-                {"name": "Ground_Materials"},
-                {"name": "Tree_Bark"},
-                {"name": "Water"}
+                {"name": "Ground_Materials", "order": 1},
+                {"name": "Tree_Bark", "order": 2},
+                {"name": "Water", "order": 3}
             ]
         },
         {
-            "name": "04_Lighting",
+            "name": "Lighting",
+            "order": 4,
             "subfolders": [
-                {"name": "HDRIs"},
-                {"name": "Sun_Sky"}
+                {"name": "HDRIs", "order": 1},
+                {"name": "Sun_Sky", "order": 2}
             ]
         },
         {
-            "name": "05_Renders",
+            "name": "Renders",
+            "order": 5,
             "subfolders": [
-                {"name": "Preview"},
-                {"name": "Final"}
+                {"name": "Preview", "order": 1, "create_blend": true},
+                {"name": "Final", "order": 2, "create_blend": true}
             ]
         }
     ]

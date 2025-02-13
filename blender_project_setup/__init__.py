@@ -7,7 +7,7 @@ bl_info = {
     "name": "Project Setup",
     "blender": (2, 80, 0),  # Minimum version of Blender
     "category": "Object",
-    "version": (1, 0),
+    "version": (1, 2),
     "author": "Pablo Muñoz",
     "description": "Create a folder structure for new 3D projects in Blender",
 }
@@ -15,21 +15,23 @@ bl_info = {
 def get_template_items(self, context):
     manager = TemplateManager()
     return manager.list_templates()
-    
+
 def register():
-    bpy.utils.register_class(CreateProjectFolderOperator)
     bpy.utils.register_class(SelectBasePathOperator)
+    bpy.utils.register_class(CreateProjectFolderOperator)
     bpy.utils.register_class(FolderCreatorPanel)
+
+    # Load last saved base path
+    default_path = SystemUtils.get_default_base_path()
 
     bpy.types.Scene.my_project_name = bpy.props.StringProperty(
         name="Project Name",
         default="MyNew3DProject"
     )
 
-    system_utils = SystemUtils()
     bpy.types.Scene.my_base_path = bpy.props.StringProperty(
         name="Base Path",
-        default=system_utils.get_default_base_path()
+        default=default_path
     )
 
     bpy.types.Scene.my_template = bpy.props.EnumProperty(
@@ -40,8 +42,8 @@ def register():
     )
 
 def unregister():
-    bpy.utils.unregister_class(CreateProjectFolderOperator)
     bpy.utils.unregister_class(SelectBasePathOperator)
+    bpy.utils.unregister_class(CreateProjectFolderOperator)
     bpy.utils.unregister_class(FolderCreatorPanel)
 
     del bpy.types.Scene.my_project_name
