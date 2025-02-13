@@ -1,4 +1,3 @@
-import os
 import bpy
 from ..utils.template_manager import TemplateManager
 from ..utils.project_manager import ProjectManager
