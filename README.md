@@ -1,4 +1,4 @@
-# Project Setup - Blender Addon
+# Project Setup - Blender Add-on
 
 ## Overview
 
